@@ -377,6 +377,89 @@ footer{display:block;padding:0;border-top:none;color:var(--muted)}
   .intro-logo{width:min(320px,78vw)}
 }
 
+
+/* ===== EVROK AI visual gallery + lightweight admin CMS ===== */
+.image-showcase{padding:86px 0 40px}
+.image-showcase-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:28px}
+.image-showcase-head .section-head{margin-bottom:0}
+.image-source-note{font-size:13px;color:var(--muted);border:1px solid #202020;background:#0f0f0f;border-radius:999px;padding:10px 14px;white-space:nowrap}
+.visual-gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-auto-rows:260px;gap:18px}
+.visual-card{position:relative;overflow:hidden;border-radius:24px;border:1px solid #1f1f1f;background:#111;box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.visual-card.large{grid-row:span 2}
+.visual-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.08) brightness(.76);transform:scale(1.02);transition:transform .65s ease,filter .65s ease}
+.visual-card:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.78));z-index:1}
+.visual-card:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 68% 18%,rgba(34,177,76,.24),transparent 34%);z-index:2;mix-blend-mode:screen;opacity:.72}
+.visual-card:hover img{transform:scale(1.07);filter:saturate(.95) contrast(1.12) brightness(.86)}
+.visual-card-body{position:absolute;left:22px;right:22px;bottom:22px;z-index:3}
+.visual-tag{display:inline-flex;align-items:center;gap:7px;margin-bottom:12px;color:#bdf5ca;background:rgba(0,0,0,.48);border:1px solid rgba(34,177,76,.24);backdrop-filter:blur(10px);border-radius:999px;padding:7px 10px;font-size:11px;letter-spacing:.9px;text-transform:uppercase}
+.visual-tag i{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(34,177,76,.12)}
+.visual-card h3{font-size:24px;letter-spacing:-.7px;margin-bottom:8px}
+.visual-card p{font-size:14px;color:#c8cfcd;line-height:1.65;max-width:520px}
+.visual-card.large h3{font-size:34px;letter-spacing:-1.5px}
+.cms-contact-section{padding:54px 0 92px}
+.cms-contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:stretch}
+.contact-info-panel,.lead-form-panel{background:linear-gradient(180deg,#101010,#0d0d0d);border:1px solid #1e1e1e;border-radius:24px;padding:28px;position:relative;overflow:hidden}
+.contact-info-panel:before,.lead-form-panel:before{content:"";position:absolute;right:-90px;top:-90px;width:220px;height:220px;background:radial-gradient(circle,rgba(34,177,76,.14),transparent 64%)}
+.contact-row{display:flex;gap:14px;align-items:flex-start;border-bottom:1px solid #1b1b1b;padding:18px 0;position:relative;z-index:1}
+.contact-row:last-child{border-bottom:none;padding-bottom:0}
+.contact-icon{width:38px;height:38px;border-radius:12px;background:#132118;border:1px solid #23422e;color:var(--green-2);display:flex;align-items:center;justify-content:center;flex:0 0 auto;font-weight:900}
+.contact-row strong{display:block;color:#fff;font-size:15px;margin-bottom:6px}
+.contact-row span{display:block;color:var(--muted);font-size:14px;line-height:1.55}
+.lead-form{position:relative;z-index:1;display:grid;gap:14px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lead-form input,.lead-form textarea{width:100%;background:#0b0b0b;border:1px solid #242424;border-radius:12px;color:#f4f6f7;padding:14px 14px;font-size:14px;outline:none}
+.lead-form input:focus,.lead-form textarea:focus{border-color:rgba(34,177,76,.55);box-shadow:0 0 0 4px rgba(34,177,76,.08)}
+.lead-form textarea{min-height:120px;resize:vertical;grid-column:1/-1}
+.form-submit{border:none;cursor:pointer;background:linear-gradient(180deg,var(--green-2),var(--green));color:#fff;font-size:15px;font-weight:800;padding:15px 22px;border-radius:12px;box-shadow:0 14px 30px rgba(34,177,76,.18)}
+.form-status{font-size:13px;color:var(--green-2);min-height:18px}
+.admin-fab{position:fixed;right:22px;bottom:22px;z-index:999;background:linear-gradient(180deg,var(--green-2),var(--green));color:#fff;border:none;border-radius:999px;padding:13px 18px;font-weight:900;box-shadow:0 16px 40px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.08) inset;cursor:pointer}
+.admin-modal{position:fixed;inset:0;z-index:1200;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.68);backdrop-filter:blur(12px);padding:24px}
+.admin-modal.active{display:flex}
+.admin-panel{width:min(1060px,96vw);max-height:88vh;overflow:hidden;background:#0c0c0c;border:1px solid #262626;border-radius:24px;box-shadow:0 30px 100px rgba(0,0,0,.55);display:grid;grid-template-columns:260px 1fr}
+.admin-side{background:#090909;border-right:1px solid #1c1c1c;padding:24px}
+.admin-side h3{font-size:20px;margin-bottom:8px}
+.admin-side p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:20px}
+.admin-tabs{display:grid;gap:8px}
+.admin-tab{border:1px solid #202020;background:#101010;color:#cfd6d3;text-align:left;border-radius:12px;padding:12px 13px;cursor:pointer}
+.admin-tab.active{border-color:rgba(34,177,76,.45);background:rgba(34,177,76,.09);color:#fff}
+.admin-main{padding:24px;overflow:auto}
+.admin-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
+.admin-head h3{font-size:22px}
+.admin-close{background:#151515;border:1px solid #282828;color:#fff;border-radius:10px;padding:9px 12px;cursor:pointer}
+.admin-section{display:none}
+.admin-section.active{display:block}
+.admin-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.admin-field{display:grid;gap:8px;margin-bottom:14px}
+.admin-field.full{grid-column:1/-1}
+.admin-field label{font-size:12px;color:var(--muted);letter-spacing:.6px;text-transform:uppercase}
+.admin-field input,.admin-field textarea,.admin-field select{width:100%;background:#090909;border:1px solid #242424;border-radius:12px;color:#fff;padding:12px 12px;font-size:14px;outline:none}
+.admin-field textarea{min-height:92px;resize:vertical}
+.admin-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.admin-btn{border:1px solid #2a2a2a;background:#111;color:#fff;border-radius:11px;padding:11px 14px;cursor:pointer;font-weight:700}
+.admin-btn.primary{background:linear-gradient(180deg,var(--green-2),var(--green));border-color:transparent}
+.admin-note{font-size:13px;color:var(--muted);line-height:1.7;background:#101010;border:1px solid #1f1f1f;border-radius:14px;padding:12px 14px;margin-bottom:16px}
+.submission-table{width:100%;border-collapse:collapse;font-size:13px}
+.submission-table th,.submission-table td{border-bottom:1px solid #1d1d1d;text-align:left;padding:11px 9px;vertical-align:top}
+.submission-table th{color:#fff;background:#101010;position:sticky;top:0}
+.submission-table td{color:#c8cfcd}
+@media (max-width:1100px){
+  .visual-gallery{grid-template-columns:1fr 1fr;grid-auto-rows:240px}
+  .visual-card.large{grid-column:1/-1;grid-row:span 1}
+  .cms-contact-grid{grid-template-columns:1fr}
+  .admin-panel{grid-template-columns:1fr}
+  .admin-side{border-right:none;border-bottom:1px solid #1c1c1c}
+  .admin-tabs{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:760px){
+  .image-showcase-head{display:block}
+  .image-source-note{display:inline-flex;margin-top:16px;white-space:normal}
+  .visual-gallery{grid-template-columns:1fr;grid-auto-rows:250px}
+  .visual-card.large{grid-row:span 1}
+  .form-row,.admin-form-grid{grid-template-columns:1fr}
+  .admin-tabs{grid-template-columns:1fr 1fr}
+  .admin-fab{right:14px;bottom:14px}
+}
+
 </style>
 </head>
 <body>
@@ -533,6 +616,54 @@ footer{display:block;padding:0;border-top:none;color:var(--muted)}
   <defs><linearGradient id="sw" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff"/><stop offset="55%" stop-color="#b6c0c4"/><stop offset="100%" stop-color="#f7f8f9"/></linearGradient><linearGradient id="sb" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#202421"/><stop offset="100%" stop-color="#070909"/></linearGradient><filter id="sg"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
   <ellipse cx="130" cy="400" rx="70" ry="12" fill="rgba(34,177,76,.22)"/><path d="M130 24 C166 24 194 50 198 86 C202 112 196 140 178 158 C164 172 148 178 130 178 C112 178 96 172 82 158 C64 140 58 112 62 86 C66 50 94 24 130 24 Z" fill="url(#sb)" stroke="#333a37"/><path d="M82 74 C96 46 116 36 130 36 C146 36 168 50 180 76 C168 92 152 100 130 102 C108 100 92 92 82 74 Z" fill="#050606"/><path d="M146 48 C164 60 172 74 174 86" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="4" stroke-linecap="round"/><path d="M92 98 C114 110 146 110 168 98" fill="none" stroke="#22B14C" stroke-width="3" filter="url(#sg)" opacity=".8"/><path d="M82 184 C96 166 112 160 130 160 C148 160 164 166 178 184 L202 262 C208 282 196 302 176 306 C148 312 112 312 84 306 C64 302 52 282 58 262 Z" fill="url(#sw)" stroke="#e8eeee"/><path d="M84 184 C102 198 116 204 130 204 C144 204 158 198 176 184 L168 164 C154 156 142 152 130 152 C118 152 106 156 92 164 Z" fill="url(#sb)"/><path d="M70 258 C92 270 108 274 130 274 C152 274 168 270 190 258 L176 306 C148 312 112 312 84 306 Z" fill="url(#sb)"/><circle cx="130" cy="238" r="12" fill="#22B14C" filter="url(#sg)"/><path d="M58 202 C30 222 22 254 22 292 V334" fill="none" stroke="url(#sb)" stroke-width="22" stroke-linecap="round"/><path d="M202 202 C230 222 238 254 238 292 V334" fill="none" stroke="url(#sb)" stroke-width="22" stroke-linecap="round"/><path d="M22 334 C22 360 42 374 66 374 H78" fill="none" stroke="url(#sb)" stroke-width="20" stroke-linecap="round"/><path d="M238 334 C238 360 218 374 194 374 H182" fill="none" stroke="url(#sb)" stroke-width="20" stroke-linecap="round"/><path d="M104 312 V376" stroke="url(#sb)" stroke-width="24" stroke-linecap="round"/><path d="M156 312 V376" stroke="url(#sb)" stroke-width="24" stroke-linecap="round"/></svg></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="image-showcase" id="gallery">
+  <div class="container">
+    <div class="image-showcase-head">
+      <div class="section-head">
+        <div class="section-eyebrow">Visual Showcase</div>
+        <div class="section-title">AI / technology imagery that makes the site feel real.</div>
+        <div class="section-sub">A curated image wall adds visual proof, atmosphere, and product storytelling. These images can be replaced later from the admin panel.</div>
+      </div>
+      <div class="image-source-note">Free AI / tech style images · editable in Admin</div>
+    </div>
+    <div class="visual-gallery">
+        <article class="visual-card large" data-image-card="1"><img src="https://images.pexels.com/photos/5181148/pexels-photo-5181148.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Humanoid Robot Interface" data-admin-image="1"><div class="visual-card-body"><div class="visual-tag"><i></i><span data-admin-image-tag="1">AI Robotics</span></div><h3 data-admin-image-title="1">Humanoid Robot Interface</h3><p data-admin-image-desc="1">High-contrast robot visuals for premium AI product storytelling.</p></div></article>
+        <article class="visual-card" data-image-card="2"><img src="https://images.pexels.com/photos/9028874/pexels-photo-9028874.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Robotic Arm System" data-admin-image="2"><div class="visual-card-body"><div class="visual-tag"><i></i><span data-admin-image-tag="2">Automation</span></div><h3 data-admin-image-title="2">Robotic Arm System</h3><p data-admin-image-desc="2">Precision automation, machine perception, and industrial intelligence.</p></div></article>
+        <article class="visual-card" data-image-card="3"><img src="https://images.pexels.com/photos/8566524/pexels-photo-8566524.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Future Humanoid" data-admin-image="3"><div class="visual-card-body"><div class="visual-tag"><i></i><span data-admin-image-tag="3">Embodied AI</span></div><h3 data-admin-image-title="3">Future Humanoid</h3><p data-admin-image-desc="3">Human-machine collaboration and next-generation interaction design.</p></div></article>
+        <article class="visual-card" data-image-card="4"><img src="https://images.pexels.com/photos/5408005/pexels-photo-5408005.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="AI Infrastructure" data-admin-image="4"><div class="visual-card-body"><div class="visual-tag"><i></i><span data-admin-image-tag="4">Data Center</span></div><h3 data-admin-image-title="4">AI Infrastructure</h3><p data-admin-image-desc="4">Server rooms, GPU clusters, and scalable model deployment backbone.</p></div></article>
+        <article class="visual-card" data-image-card="5"><img src="https://images.pexels.com/photos/17489153/pexels-photo-17489153.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Model Runtime" data-admin-image="5"><div class="visual-card-body"><div class="visual-tag"><i></i><span data-admin-image-tag="5">Compute</span></div><h3 data-admin-image-title="5">Model Runtime</h3><p data-admin-image-desc="5">Reliable computing environments for inference, training, and data flow.</p></div></article>
+</div>
+  </div>
+</section>
+
+<section class="cms-contact-section" id="contact">
+  <div class="container">
+    <div class="cms-contact-grid">
+      <div class="contact-info-panel">
+        <div class="section-eyebrow">Contact</div>
+        <div class="section-title" style="font-size:38px;margin-bottom:12px">Let’s build intelligent systems.</div>
+        <div class="section-sub" style="margin-bottom:18px">Update email, phone, address, and description from the built-in admin panel.</div>
+        <div class="contact-row"><div class="contact-icon">E</div><div><strong>Email</strong><span data-admin-contact="email">hello@evrokai.com</span></div></div>
+        <div class="contact-row"><div class="contact-icon">P</div><div><strong>Phone</strong><span data-admin-contact="phone">+86 000 0000 0000</span></div></div>
+        <div class="contact-row"><div class="contact-icon">A</div><div><strong>Address</strong><span data-admin-contact="address">China · Global AI Technology Services</span></div></div>
+      </div>
+      <div class="lead-form-panel">
+        <div class="section-eyebrow">Lead Form</div>
+        <div class="section-title" style="font-size:38px;margin-bottom:16px">Tell us what you need.</div>
+        <form class="lead-form" id="leadForm" name="evrok-leads" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="evrok-leads">
+          <div class="form-row"><input name="name" placeholder="Your name" required><input name="company" placeholder="Company"></div>
+          <div class="form-row"><input type="email" name="email" placeholder="Email" required><input name="phone" placeholder="Phone / WhatsApp"></div>
+          <textarea name="message" placeholder="Tell us about your AI / robotics / automation project" required></textarea>
+          <button class="form-submit" type="submit">Submit request →</button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
       </div>
     </div>
   </div>
@@ -840,6 +971,60 @@ footer{display:block;padding:0;border-top:none;color:var(--muted)}
     </div>
   </div>
 </footer>
+
+<button class="admin-fab" id="adminOpen" type="button">Admin</button>
+<div class="admin-modal" id="adminModal" aria-hidden="true">
+  <div class="admin-panel">
+    <aside class="admin-side">
+      <h3>EVROK Admin</h3>
+      <p>轻量后台面板：替换展示图片、修改核心文字、联系方式，并查看本地表单提交记录。</p>
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-admin-tab="content">文字内容</button>
+        <button class="admin-tab" data-admin-tab="images">展示图片</button>
+        <button class="admin-tab" data-admin-tab="contact">联系方式</button>
+        <button class="admin-tab" data-admin-tab="submissions">表单数据</button>
+      </div>
+    </aside>
+    <main class="admin-main">
+      <div class="admin-head"><h3 id="adminTitle">文字内容</h3><button class="admin-close" id="adminClose" type="button">关闭</button></div>
+      <section class="admin-section active" data-admin-section="content">
+        <div class="admin-note">这个静态版后台会把修改内容保存到当前浏览器 localStorage。正式上线后，可以继续接 Supabase / Netlify CMS / 自建后台。</div>
+        <div class="admin-form-grid">
+          <div class="admin-field full"><label>首页大标题 HTML</label><textarea id="cmsHeroTitle"></textarea></div>
+          <div class="admin-field full"><label>首页说明文字</label><textarea id="cmsHeroText"></textarea></div>
+          <div class="admin-field"><label>主按钮文字</label><input id="cmsPrimaryBtn"></div>
+          <div class="admin-field"><label>副按钮文字</label><input id="cmsSecondaryBtn"></div>
+        </div>
+        <div class="admin-actions"><button class="admin-btn primary" id="saveContent" type="button">保存文字</button><button class="admin-btn" id="resetContent" type="button">恢复默认</button></div>
+      </section>
+      <section class="admin-section" data-admin-section="images">
+        <div class="admin-note">把图片 URL 换成你自己的图片链接即可。建议用 1600px 宽以上、深色科技/AI/机器人风格图片。</div>
+        <div class="admin-field"><label>选择图片卡片</label><select id="imageSelect"></select></div>
+        <div class="admin-form-grid">
+          <div class="admin-field full"><label>图片 URL</label><input id="imageUrl"></div>
+          <div class="admin-field"><label>标签</label><input id="imageTag"></div>
+          <div class="admin-field"><label>标题</label><input id="imageTitle"></div>
+          <div class="admin-field full"><label>说明</label><textarea id="imageDesc"></textarea></div>
+        </div>
+        <div class="admin-actions"><button class="admin-btn primary" id="saveImage" type="button">保存图片卡片</button><button class="admin-btn" id="resetImages" type="button">恢复默认图片</button></div>
+      </section>
+      <section class="admin-section" data-admin-section="contact">
+        <div class="admin-form-grid">
+          <div class="admin-field"><label>Email</label><input id="cmsEmail"></div>
+          <div class="admin-field"><label>Phone</label><input id="cmsPhone"></div>
+          <div class="admin-field full"><label>Address</label><input id="cmsAddress"></div>
+        </div>
+        <div class="admin-actions"><button class="admin-btn primary" id="saveContact" type="button">保存联系方式</button><button class="admin-btn" id="resetContact" type="button">恢复默认</button></div>
+      </section>
+      <section class="admin-section" data-admin-section="submissions">
+        <div class="admin-note">表单提交会先保存在当前浏览器，方便你本地测试。若部署到 Netlify，表单也已带 data-netlify 属性，可进一步接收线上提交。</div>
+        <div class="admin-actions" style="margin-bottom:16px"><button class="admin-btn primary" id="exportSubmissions" type="button">导出 CSV</button><button class="admin-btn" id="clearSubmissions" type="button">清空记录</button></div>
+        <div id="submissionList"></div>
+      </section>
+    </main>
+  </div>
+</div>
+
 </div>
 
 <script>
@@ -963,5 +1148,44 @@ setTimeout(()=>{
   setTimeout(()=>{intro.style.display='none';cancelAnimationFrame(animId);},1000);
 },3200);
 </script>
+
+<script>
+(function(){
+  const STORE_KEY='evrok_cms_v1';
+  const defaultImages=Array.from(document.querySelectorAll('[data-image-card]')).map(card=>{const id=card.dataset.imageCard;return{id,url:card.querySelector('[data-admin-image="'+id+'"]')?.src||'',tag:card.querySelector('[data-admin-image-tag="'+id+'"]')?.textContent||'',title:card.querySelector('[data-admin-image-title="'+id+'"]')?.textContent||'',desc:card.querySelector('[data-admin-image-desc="'+id+'"]')?.textContent||''};});
+  const DEFAULTS={content:{heroTitle:document.querySelector('.hero h1')?.innerHTML||'',heroText:document.querySelector('.hero p')?.textContent||'',primaryBtn:document.querySelector('.hero-btns .btn-primary')?.textContent||'Start building →',secondaryBtn:document.querySelector('.hero-btns .btn-secondary')?.textContent||'Explore AI stack'},contact:{email:'hello@evrokai.com',phone:'+86 000 0000 0000',address:'China · Global AI Technology Services'},images:defaultImages};
+  let state=JSON.parse(localStorage.getItem(STORE_KEY)||'null')||DEFAULTS;
+  let submissions=JSON.parse(localStorage.getItem('evrok_leads_v1')||'[]');
+  function save(){localStorage.setItem(STORE_KEY,JSON.stringify(state));}
+  function apply(){
+    const h1=document.querySelector('.hero h1'),hp=document.querySelector('.hero p'),pb=document.querySelector('.hero-btns .btn-primary'),sb=document.querySelector('.hero-btns .btn-secondary');
+    if(h1)h1.innerHTML=state.content.heroTitle;if(hp)hp.textContent=state.content.heroText;if(pb)pb.textContent=state.content.primaryBtn;if(sb)sb.textContent=state.content.secondaryBtn;
+    ['email','phone','address'].forEach(k=>{const el=document.querySelector('[data-admin-contact="'+k+'"]');if(el)el.textContent=state.contact[k]||'';});
+    state.images.forEach(img=>{const image=document.querySelector('[data-admin-image="'+img.id+'"]'),tag=document.querySelector('[data-admin-image-tag="'+img.id+'"]'),title=document.querySelector('[data-admin-image-title="'+img.id+'"]'),desc=document.querySelector('[data-admin-image-desc="'+img.id+'"]');if(image)image.src=img.url;if(tag)tag.textContent=img.tag;if(title)title.textContent=img.title;if(desc)desc.textContent=img.desc;});
+  }
+  apply();
+  const modal=document.getElementById('adminModal'),open=document.getElementById('adminOpen'),close=document.getElementById('adminClose'),adminTitle=document.getElementById('adminTitle');
+  function fillForms(){
+    document.getElementById('cmsHeroTitle').value=state.content.heroTitle||'';document.getElementById('cmsHeroText').value=state.content.heroText||'';document.getElementById('cmsPrimaryBtn').value=state.content.primaryBtn||'';document.getElementById('cmsSecondaryBtn').value=state.content.secondaryBtn||'';document.getElementById('cmsEmail').value=state.contact.email||'';document.getElementById('cmsPhone').value=state.contact.phone||'';document.getElementById('cmsAddress').value=state.contact.address||'';
+    const sel=document.getElementById('imageSelect');sel.innerHTML='';state.images.forEach(img=>{const opt=document.createElement('option');opt.value=img.id;opt.textContent='Image '+img.id+' · '+img.title;sel.appendChild(opt);});fillImageForm();renderSubmissions();
+  }
+  function fillImageForm(){const sel=document.getElementById('imageSelect');const img=state.images.find(x=>x.id===sel.value)||state.images[0];if(!img)return;document.getElementById('imageUrl').value=img.url||'';document.getElementById('imageTag').value=img.tag||'';document.getElementById('imageTitle').value=img.title||'';document.getElementById('imageDesc').value=img.desc||'';}
+  open&&open.addEventListener('click',()=>{modal.classList.add('active');fillForms();});close&&close.addEventListener('click',()=>modal.classList.remove('active'));modal&&modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('active');});
+  document.querySelectorAll('.admin-tab').forEach(tab=>{tab.addEventListener('click',()=>{document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.admin-section').forEach(s=>s.classList.remove('active'));tab.classList.add('active');const key=tab.dataset.adminTab;document.querySelector('[data-admin-section="'+key+'"]').classList.add('active');adminTitle.textContent=tab.textContent;});});
+  document.getElementById('saveContent')?.addEventListener('click',()=>{state.content.heroTitle=document.getElementById('cmsHeroTitle').value;state.content.heroText=document.getElementById('cmsHeroText').value;state.content.primaryBtn=document.getElementById('cmsPrimaryBtn').value;state.content.secondaryBtn=document.getElementById('cmsSecondaryBtn').value;save();apply();alert('文字内容已保存');});
+  document.getElementById('resetContent')?.addEventListener('click',()=>{state.content=DEFAULTS.content;save();apply();fillForms();});
+  document.getElementById('imageSelect')?.addEventListener('change',fillImageForm);
+  document.getElementById('saveImage')?.addEventListener('click',()=>{const id=document.getElementById('imageSelect').value;const img=state.images.find(x=>x.id===id);if(!img)return;img.url=document.getElementById('imageUrl').value;img.tag=document.getElementById('imageTag').value;img.title=document.getElementById('imageTitle').value;img.desc=document.getElementById('imageDesc').value;save();apply();fillForms();alert('图片卡片已保存');});
+  document.getElementById('resetImages')?.addEventListener('click',()=>{state.images=DEFAULTS.images;save();apply();fillForms();});
+  document.getElementById('saveContact')?.addEventListener('click',()=>{state.contact.email=document.getElementById('cmsEmail').value;state.contact.phone=document.getElementById('cmsPhone').value;state.contact.address=document.getElementById('cmsAddress').value;save();apply();alert('联系方式已保存');});
+  document.getElementById('resetContact')?.addEventListener('click',()=>{state.contact=DEFAULTS.contact;save();apply();fillForms();});
+  const form=document.getElementById('leadForm');form&&form.addEventListener('submit',e=>{const data=Object.fromEntries(new FormData(form).entries());data.time=new Date().toLocaleString();submissions.unshift(data);localStorage.setItem('evrok_leads_v1',JSON.stringify(submissions));document.getElementById('formStatus').textContent='Submitted. Your request has been saved.';renderSubmissions();});
+  function renderSubmissions(){const wrap=document.getElementById('submissionList');if(!wrap)return;if(!submissions.length){wrap.innerHTML='<div class="admin-note">暂无提交记录。</div>';return;}wrap.innerHTML='<table class="submission-table"><thead><tr><th>时间</th><th>姓名</th><th>邮箱</th><th>电话</th><th>需求</th></tr></thead><tbody>'+submissions.map(s=>'<tr><td>'+esc(s.time||'')+'</td><td>'+esc(s.name||'')+'</td><td>'+esc(s.email||'')+'</td><td>'+esc(s.phone||'')+'</td><td>'+esc(s.message||'')+'</td></tr>').join('')+'</tbody></table>';}
+  function esc(str){return String(str).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+  document.getElementById('exportSubmissions')?.addEventListener('click',()=>{const rows=[['time','name','company','email','phone','message'],...submissions.map(s=>[s.time,s.name,s.company,s.email,s.phone,s.message])];const csv=rows.map(r=>r.map(v=>'"'+String(v||'').replaceAll('"','""')+'"').join(',')).join('\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='evrok-leads.csv';a.click();URL.revokeObjectURL(a.href);});
+  document.getElementById('clearSubmissions')?.addEventListener('click',()=>{if(confirm('确定清空所有本地提交记录？')){submissions=[];localStorage.setItem('evrok_leads_v1',JSON.stringify(submissions));renderSubmissions();}});
+})();
+</script>
+
 </body>
 </html>
